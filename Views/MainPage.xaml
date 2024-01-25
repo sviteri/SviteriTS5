@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SviteriTS5.Views.MainPage"
+             Title="MainPage">
+    <VerticalStackLayout>
+        <StackLayout>
+            <Label Text="Lista de Estudiantes" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+            <ListView x:Name="StudentsListView" ItemsSource="{Binding Students}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Id}" FontSize="Medium" />
+                                <Label Text="{Binding Codigo}" FontSize="Medium" />
+                                <Label Text="{Binding Nombres}" FontSize="Medium" />
+                                <Label Text="{Binding Carrera}" FontSize="Medium" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+
+            <Button Text="Agregar Estudiante" Clicked="OnAddStudentClicked" />
+            <Button Text="Eliminar Estudiante" Clicked="OnDeleteStudentClicked" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
